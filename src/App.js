@@ -1,51 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
-import React,{Component} from "react";
+import Increment from './compoment/Increment';
+import React, {Component} from 'react';
 
+class App extends Component {
 
-class App extends React.Component{
-   state = {
-   fullName:"Ben Salah Meriam",
-   bio:"everything and nothing",
-   imgSrc:<img src="./img/photo-de-profil.jpg"/>,
-   profession:"ingenieur en bioindus",
-
- };
-
-  handleClick=()=>this.setState({fullName:"Aya", bio:"laugh",imgSrc:<img src="./img/photo-de-prof.jpg"/>,profession:"Webdevp"})
-  render(){
+  constructor(props) {
+      super(props);
+      this.state={
+          showCounter : false,
+          profile:{
+            fullName:"Ben Salah Meriam",
+            bio:"everything and nothing",
+            imgSrc:<img src="./img/photo-de-profil.jpg"/>,
+            profession:"ingenieur en bioindus",
+                  }
+      };
+  }
+  toggleShow() {
+    const { showCounter } = this.state;
+    this.setState({
+      showCounter: !showCounter
+    })
+  }
+  render() {
+    const { showCounter } = this.state;
     return (
     <div className="App">
       <header className="App-header">
-        <h2> hello <br/> i will present my self <br/>
-        I'm {this.state.fullName} <br/> my bio : { this.state.bio} 
-         <br/>{this.state.imgSrc} <br/> and i'm a {this.state.profession}</h2>
-        <p>click to discover our guest </p>
-       <button onClick={this.handleClick}> ClickMe</button>
+        
+        <button onClick={this.toggleShow.bind(this)}>toggle counter</button>
+        
+          {showCounter &&
+          <Increment profile={this.state.profile} />
+          }
+      
       </header>
     </div>
   );
-  }
 }
+}
+  
 
-//  function App() {
-//   return (
-//      <div className="App">
-//      <header className="App-header">
-//        <img src={logo} className="App-logo" alt="logo" />
-//         <p>
-//          Edit <code>src/App.js</code> and save to reload.
-//          </p>
-//         <a
-//           className="App-link"          href="https://reactjs.org"
-//           target="_blank"
-//           rel="noopener noreferrer"
-//        >
-//           Learn React
-//         </a>
-//       </header>
-//     </div>
-//    );
-//  }
 
 export default App;

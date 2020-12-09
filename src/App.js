@@ -2,7 +2,7 @@ import Increment from './compoment/Increment';
 import React, {Component} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import{Navbar,Nav,Form,FormControl,Button,} from 'react-bootstrap';
-import { BsFillHouseFill } from "react-icons/bs";
+
 import { BsBriefcase } from "react-icons/bs";
 
 import { SiGithub } from "react-icons/si";
@@ -28,6 +28,25 @@ import { DiJsBadge }from "react-icons/di";
   borderRadius: "109px",
   marginLeft: "594px",
  }
+ const iconpart={
+    display: "flex",
+  justifyContent: "space-between",
+  backgroundColor: "#515457",
+  boxShadow: "0 1px 1px 0 rgba(0, 0, 0, 0.12)",
+  boxSizing: "border-box",
+  width: "100%",
+  textAlign: "left",
+  font: "bold 16px sans-serif",
+  padding: "55px 50px",
+  marginTop: "248pxS",
+}
+const mailpart={
+  display: "flex",
+  flexWrap: "nowrap",
+  color: "white",
+}
+const badg={ marginRight: "14px" 
+}
 
 
 class App extends Component {
@@ -56,7 +75,7 @@ class App extends Component {
       
    <div>
          <Navbar bg="dark" variant="dark">
-      <Navbar.Brand href="#home">Profil</Navbar.Brand>
+      <Navbar.Brand href="#home">Profile</Navbar.Brand>
         <Nav className="mr-auto">
          <Nav.Link href="#home">Home</Nav.Link>
          <Nav.Link href="#features">First Articl</Nav.Link>

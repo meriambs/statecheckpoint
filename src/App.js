@@ -38,7 +38,7 @@ import { DiJsBadge }from "react-icons/di";
   textAlign: "left",
   font: "bold 16px sans-serif",
   padding: "55px 50px",
-  marginTop: "248pxS",
+  marginTop: "248px",
 }
 const mailpart={
   display: "flex",
